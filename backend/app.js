@@ -1,4 +1,5 @@
 require("dotenv").config();
+require('newrelic');
 var http = require("http"),
   path = require("path"),
   methods = require("methods"),
@@ -72,7 +73,7 @@ app.use(function (req, res, next) {
 // development error handler
 // will print stacktrace
 if (!isProduction) {
-  app.use(function(err, req, res, next) {
+  app.use(function (err, req, res, next) {
     console.log(err.stack);
 
     res.status(err.status || 500);
@@ -88,7 +89,7 @@ if (!isProduction) {
 
 // production error handler
 // no stacktraces leaked to user
-app.use(function(err, req, res, next) {
+app.use(function (err, req, res, next) {
   res.status(err.status || 500);
   res.json({
     errors: {
@@ -99,6 +100,6 @@ app.use(function(err, req, res, next) {
 });
 
 // finally, let's start our server...
-var server = app.listen(process.env.PORT || 3000, function() {
+var server = app.listen(process.env.PORT || 3000, function () {
   console.log("Listening on port " + server.address().port);
 });
