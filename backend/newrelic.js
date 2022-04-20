@@ -9,11 +9,11 @@ exports.config = {
   /**
    * Array of application names.
    */
-  app_name: ['My Application'],
+  app_name: ['anythink-market-lm8ab-api'],
   /**
    * Your New Relic license key.
    */
-  license_key: 'license key here',
+  license_key: 'fe92344b52fe8286328007989aa4f69693e8NRAL',
   /**
    * This setting controls distributed tracing.
    * Distributed tracing lets you see the path that a request takes through your
